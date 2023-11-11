@@ -1,7 +1,9 @@
 import axios from "axios";
 
+
 // console.log("axios", axios);
 
+// Performing multiple concurrent requests
 function getUserAccount() {
     return axios.get('https://jsonplaceholder.typicode.com/users/1');
   }
