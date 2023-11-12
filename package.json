@@ -16,6 +16,7 @@
     "url": "git+ssh://git@github.com/prasanv/axios.git"
   },
   "author": "prasanv",
+  "type": "commonjs",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/prasanv/axios/issues"
