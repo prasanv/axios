@@ -8,6 +8,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -27,8 +28,12 @@
   "include": [
     "*",
     ".next/types/**/*.ts", 
-    "/src"  ],
+    "src/"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "paths": {
+    "@/components/*": ["./src/components/*"],
+    "@/src/*": ["./src/*"],
+  }
 }

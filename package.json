@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -31,6 +30,8 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/next": "^9.0.0",
     "@types/node": "20.9.0",
     "@types/react": "18.2.37"
   }

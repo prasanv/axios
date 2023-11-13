@@ -6,7 +6,6 @@ async function fetchReposDetails(name:string) {
     try {
         // 
         const res = await axios.get(`http://localhost:9000/repos?name=${name}`)
-        console.log(res.data[0].languages_url);
         return res.data[0];
     } catch (err) {
         console.error(err);
