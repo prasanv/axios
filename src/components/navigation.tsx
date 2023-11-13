@@ -8,6 +8,7 @@ const Navigation = () => {
         <nav className='header'>
             <div className="links">
                 <Link href='/'>Home</Link>
+                <Link href='/code/repos'>Repos</Link>
                 <Link href='/about'>About</Link>
                 <Link href='/about/teams'>Teams</Link>
             </div>
