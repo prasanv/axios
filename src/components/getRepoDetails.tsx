@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import '../app/global.css'
 
-async function fetchReposDetails(name) {
+async function fetchReposDetails(name:string) {
     try {
         // 
         const res = await axios.get(`http://localhost:9000/repos?name=${name}`)
@@ -13,18 +13,18 @@ async function fetchReposDetails(name) {
     }
 }
 
-async function fetchReposLangs(url) {
+async function fetchReposLangs(url:string) {
     try {
         const res = await axios.get(url)
         return res;
-    } catch (err) {
+    } catch (err: any) {
         console.error(err.response.status);
         return err.response;
     }
 }
 
-const GetRepoDetails = async ({name}) => {
-    const repoDetails = await fetchReposDetails(name);
+const GetRepoDetails = async (props: { name: string; }) => {
+    const repoDetails = await fetchReposDetails(props.name);
     const langDetails = await fetchReposLangs(repoDetails?.languages_url);
     const languages = (langDetails.status===200) ? Object.keys(langDetails.data) : null;
     // const languages = ['Typescript','CSS','HTML']
