@@ -33,7 +33,7 @@
     "node_modules"
   ],
   "paths": {
-    "@/components/*": ["./src/components/*"],
+    "@/components/*": ["../../../../components/*"],
     "@/src/*": ["./src/*"],
   }
 }

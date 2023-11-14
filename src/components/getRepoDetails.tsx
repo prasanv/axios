@@ -11,8 +11,9 @@ async function fetchReposDetails(name:string) {
         // local url
         const res = await axios.get(`http://localhost:9000/repos?name=${name}`)
         return res.data[0];
-    } catch (err) {
-        console.error(err);
+    } catch (err:any) {
+        console.error("fetchReposDetails", {"status":err.response?.status, "data":err.response?.data});
+        return err.response;
     }
 }
 
@@ -21,7 +22,7 @@ async function fetchReposLangs(url:string) {
         const res = await axios.get(url)
         return res;
     } catch (err: any) {
-        console.error(err.response?.status);
+        console.error("fetchReposLangs", {"status":err.response?.status, "data":err.response?.data});
         return err.response;
     }
 }
@@ -30,13 +31,11 @@ const GetRepoDetails = async (props: { name: string; }) => {
     const repoDetails = await fetchReposDetails(props.name);
     const langDetails = await fetchReposLangs(repoDetails?.languages_url);
     const languages = (langDetails?.status===200) ? Object.keys(langDetails.data) : null;
-    // const languages = ['Typescript','CSS','HTML']
-    // console.log(languages);
 
   return (
-    <div>
+    <div className='card'>
         {repoDetails ? (
-        <div className='card'>
+        <div>
             <h3>{repoDetails?.full_name}</h3>
             {repoDetails?.description?(<p>{repoDetails?.description}</p>):(<></>)}
             <p></p>
