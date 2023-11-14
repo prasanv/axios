@@ -14,7 +14,7 @@ const fetchRepoDirs = async (name:string) => {
         // Local Url
         const res = await axios.get(`http://localhost:9000/contents?name=${name}`);
 
-        await new Promise((resolve) => setTimeout(resolve, 10000))
+        await new Promise((resolve) => setTimeout(resolve, 3000))
         return res.data[0].contents;
     } catch(err: any) {
         console.error("fetchRepoDirs", {"status":err.response?.status, "data":err.response?.data});
