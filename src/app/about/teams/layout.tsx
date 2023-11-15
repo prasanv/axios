@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'NextJS - About'
 }
 
+// @ts-ignore
 const TeamsLayout = ({children}) => {
   return (
     <div className={roboto.className}>

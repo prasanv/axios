@@ -22,6 +22,9 @@ const path = require('path');
         // !! WARN !!
         ignoreBuildErrors: false,
       },
+      images: {
+        domains: ['picsum.photos','images.unsplash.com','plus.unsplash.com']
+      },
   }
    
   module.exports = nextConfig

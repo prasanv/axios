@@ -9,6 +9,8 @@ const poppins = Poppins({
   subsets: ["latin"]
 })
 
+export const revalidate = 3;
+
 export const metadata = {
   title: 'NextJS 13',
   description: 'NextJS 13 demo project'
