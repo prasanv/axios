@@ -1,12 +1,12 @@
 import React from 'react'
 import CoursesComponent from "../../components/courses";
 
-const Courses = () => {
+const Courses = async () => {
   return (
-    <div>
-        {/* @ts-ignore */}
+    <>
+      {/* @ts-expect-error Server Component */}
       <CoursesComponent></CoursesComponent>
-    </div>
+    </>
   )
 }
 
