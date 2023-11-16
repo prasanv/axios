@@ -12,7 +12,6 @@ const Navigation = () => {
                 <Link href='/about'>About</Link>
                 <Link href='/about/teams'>Teams</Link>
                 <Link href='/random'>Random</Link>
-                <Link href='/courses'>Courses</Link>
             </div>
         </nav>
     </div>
