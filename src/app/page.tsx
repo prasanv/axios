@@ -17,7 +17,10 @@ export default function Page() {
     try {
       const res = await axios.request({
           url: "http://localhost:8000/api/courses",
-          method: "get"
+          method: "get",
+          headers:{
+            Accept: 'application/json'
+          }
       })
        setCourses(res.data);
        setLoading(false);
