@@ -3,7 +3,11 @@
 import axios from "axios";
 import React, { useEffect, useState} from "react";
 import Loading from 'src/app/loading'
+import CourseSearch from "src/components/courseSearch";
 import CoursesComponent from "../components/courses";
+
+// Import Note: `loading.tsx` is applicable only to the server components, 
+// that's why you don't see the font styling noy getting applied.
 
 export default function Page() {
   const [courses, setCourses] = useState([]);
@@ -26,12 +30,16 @@ export default function Page() {
     fetchCourses();
   },[])
 
-  console.log(loading, courses);
+  const updateSearchResults = (results: React.SetStateAction<never[]>) => {
+    setCourses(results);
+  };
 
   if(loading){
     return (<Loading></Loading>);
   }
-    return <div>
+    return (
+    <div>
+      <CourseSearch searchResults={updateSearchResults}></CourseSearch>
       <CoursesComponent courses={courses}/>
-    </div>
+    </div>)
   }
