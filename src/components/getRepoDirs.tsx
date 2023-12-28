@@ -25,13 +25,14 @@ const fetchRepoDirs = async (name:string) => {
 const GetRepoDirs = async ({ name }: {name:string}) => {
     const repoDirs = await fetchRepoDirs(name);
     const dirs = repoDirs?.filter((item: { type: string; }) => item.type === "dir");
-    console.log(repoDirs.length);
+    console.log(repoDirs?.length);
     console.log(dirs);
-  return (
-    <div className='card'>
+  return (<>
+  {dirs ? (<div className='card'>
         <h3>Directories</h3>
       {dirs?.map((item: { name: string;} ) => (<p>{item.name}</p>))}
-    </div>
+    </div>) : (<></>) }
+  </>
   )
 }
 

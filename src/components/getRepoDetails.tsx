@@ -32,6 +32,8 @@ const GetRepoDetails = async (props: { name: string; }) => {
     const langDetails = await fetchReposLangs(repoDetails?.languages_url);
     const languages = (langDetails?.status===200) ? Object.keys(langDetails.data) : null;
 
+    console.log(repoDetails, langDetails);
+
   return (
     <div className='card'>
         {repoDetails ? (
@@ -44,7 +46,7 @@ const GetRepoDetails = async (props: { name: string; }) => {
             Languages: {languages? (languages.map((lang) => (
             <span className='card-stat' key={lang}>{lang}</span>
         ))):(<span> Sorry, rate limit exceeded unable to fetch language data</span>)}
-        </div>):(<></>)}
+        </div>):(<h3>Sorry, unable to fetch data. Please start the json server.</h3>)}
     </div>
   )
 }
