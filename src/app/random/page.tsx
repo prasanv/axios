@@ -17,7 +17,8 @@ export default async function RandomPage() {
     const randomImage = await fetchRandomImage()
     console.log(randomImage.url);
     return <div>
-      <h1>REvalidate and Cache functionality - Random Images</h1>
+      <h1>Uses React Server Component</h1>
+      <h1>Revalidate and Cache functionality - Random Images</h1>
       <img src={randomImage.url} alt="" />
     </div>
   }
