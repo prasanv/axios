@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import courses from '../data.json';
 
 // API: http://localhost:8000/api/courses/search
+//      http://localhost:8000/api/courses/search?title=NEXt
 export async function GET(request: NextRequest){
     // Method 1 using URL web API https://developer.mozilla.org/en-US/docs/Web/API
     // Example 1
@@ -16,6 +17,7 @@ export async function GET(request: NextRequest){
     
     // Method 2 Directly from request url
     const searchParams = request.nextUrl.searchParams;
+    console.log(searchParams);
 
     const searchValue = searchParams.get('title');
     console.log(searchValue?.toLowerCase());
